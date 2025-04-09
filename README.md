@@ -1,23 +1,18 @@
-🔧 Arhitectură Generală
-Frontend:
-Framework: React (cu TypeScript pentru robusteză)
+xemplu de Flux de Joc
+1. Faza de așteptare (waiting room):
+Se creează un joc nou când 3 jucători sunt disponibili (sau adăugați boți).
 
-UI: Tailwind CSS + component library (ex: Shadcn UI sau Radix UI)
+2. Faza de întrebare (question_phase)
+Se trimite o întrebare aleatoare tuturor.
 
-Harta: librărie de hex grid (ex: react-hexgrid) + logic personalizată
+Jucătorii răspund → serverul calculează scorul în funcție de corectitudine și viteză.
 
-WebSocket: pentru sincronizarea în timp real
+3. Faza de atac (attack_phase)
+În ordine descrescătoare a punctajului:
 
-Backend:
-Runtime: Node.js cu Express
+Jucătorii aleg un teritoriu vecin.
 
-Bază de date: MongoDB (jucători, meciuri, statistici, întrebări)
+Dacă e ocupat → duel (se trece în duel_phase).
 
-WebSocket: socket.io pentru comunicare live
-
-Motor de joc: gestionare faze și logică în state machine
-
-DevOps:
-Containerizare cu Docker
-
-Deployment: Vercel (frontend) + Railway / Render / VPS (backend)
+4. Faza finală (end_game)
+Se încheie jocul dacă s-au parcurs toate turele sau cineva domină harta.
