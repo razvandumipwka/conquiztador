@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './LoginPage.css'
-import DragonIntro from './DragonIntro'
+import DragonIntro from '../pages/DragonIntro'
+
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')

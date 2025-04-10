@@ -1,26 +1,35 @@
+// src/pages/DragonIntro.tsx
+import React, { useEffect } from 'react'
 import './DragonIntro.css'
 
-export default function DragonIntro({ onFinish }) {
-  // Ascunde dragonul după 4 secunde
-  setTimeout(onFinish, 4000)
+interface DragonIntroProps {
+  onFinish: () => void
+}
+
+const DragonIntro: React.FC<DragonIntroProps> = ({ onFinish }) => {
+  useEffect(() => {
+    const timer = setTimeout(onFinish, 4000)
+    return () => clearTimeout(timer)
+  }, [onFinish])
 
   return (
     <div className="dragon-intro-wrapper">
+      {/* Aici pui SVG-ul complet. Exemplu minim: */}
       <svg
-        className="dragon-svg animate-dragon"
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="600px"
-        height="675px"
-        viewBox="0 0 1137 1280"
-        preserveAspectRatio="xMidYMid meet"
+      className="dragon-svg animate-dragon"
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      width="600px"
+      height="675px"
+      viewBox="0 0 1137 1280"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g
+        transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+        fill="#f7d000"
+        stroke="none"
       >
-        <g
-          transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
-          fill="#f7d000"
-          stroke="none"
-        >
-         <path d="M7220 12711 c-370 -127 -633 -237 -962 -402 -607 -304 -1227 -724
+        <path d="M7220 12711 c-370 -127 -633 -237 -962 -402 -607 -304 -1227 -724
 -1702 -1154 -113 -103 -120 -107 -155 -102 -20 3 -117 19 -216 36 -283 48
 -477 64 -609 51 -153 -15 -264 -44 -381 -99 -122 -58 -238 -143 -327 -240 -64
 -69 -161 -202 -153 -209 2 -2 57 25 123 61 196 108 330 158 477 178 106 14
@@ -100,8 +109,10 @@ c133 -123 294 -235 449 -313 112 -56 147 -69 275 -104 l99 -27 -54 -31 c-226
 -121 -35 -245 -78z m-2850 -2548 c-1 -5 -78 -73 -172 -153 -95 -80 -241 -214
 -327 -297 l-155 -153 -260 0 -261 1 50 45 c303 272 658 460 1027 543 100 23
 98 23 98 14z"/>
-        </g>
-      </svg>
+      </g>
+    </svg>
     </div>
   )
 }
+
+export default DragonIntro
