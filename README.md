@@ -1,18 +1,50 @@
-xemplu de Flux de Joc
-1. Faza de așteptare (waiting room):
-Se creează un joc nou când 3 jucători sunt disponibili (sau adăugați boți).
+PAS CU PAS – CE VOM CONSTRUI
+🔹 1. Frontend (React + Leaflet.js)
+Pagina de autentificare (login/register)
 
-2. Faza de întrebare (question_phase)
-Se trimite o întrebare aleatoare tuturor.
+Ecran lobby (alegi jocul, vezi alți jucători)
 
-Jucătorii răspund → serverul calculează scorul în funcție de corectitudine și viteză.
+Hartă interactivă (cu țări clicabile)
 
-3. Faza de atac (attack_phase)
-În ordine descrescătoare a punctajului:
+UI întrebări și răspunsuri
 
-Jucătorii aleg un teritoriu vecin.
+Animații pentru cuceriri
 
-Dacă e ocupat → duel (se trece în duel_phase).
+🔹 2. Backend (Node.js + Express)
+API pentru useri (login/register)
 
-4. Faza finală (end_game)
-Se încheie jocul dacă s-au parcurs toate turele sau cineva domină harta.
+API pentru întrebări (GET, POST)
+
+Logica de joc (rundă, scoruri, control teritorii)
+
+🔹 3. WebSocket (Socket.IO)
+Conectare la joc în timp real
+
+Evenimente: "jucător a răspuns", "țară cucerită", "start rundă"
+
+Sincronizare între jucători
+
+🔹 4. Baza de date (PostgreSQL sau MongoDB)
+Tabele/colecții:
+
+users (cu scoruri)
+
+games (stare joc)
+
+territories (cine controlează ce)
+
+questions (cu dificultate, răspunsuri etc.)
+
+🔹 5. Mapă + Logică teritorii
+Hartă SVG sau Leaflet
+
+Cod pentru determinarea teritoriilor controlate
+
+Vecinătăți între țări (ca să știi unde poți ataca)
+
+🔹 6. Sistem de quiz
+Întrebări randomizate, cu temporizator
+
+Răspunsuri multiple
+
+Punctaj pe răspuns corect și timp
