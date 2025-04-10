@@ -1,57 +1,60 @@
-@import 'https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
-
 .login-page {
-  background: linear-gradient(to bottom, #1e1e1e, #000);
-  color: #f0e6d2;
-  font-family: 'MedievalSharp', cursive;
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a0a0a;
+  position: relative;
 }
 
-.login-card {
-  background: rgba(30, 30, 30, 0.9);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px #ffcc00;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+.dragon-intro {
+  display: flex;
+  gap: 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-.game-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffcc00;
+.dragon-part {
+  width: 80px;
+  height: 80px;
+  background: url('/images/dragon-part.png') no-repeat center/contain;
+  opacity: 0;
+  animation: appear 1s forwards;
 }
 
-.subtitle {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: #ddd;
-}
+.part1 { animation-delay: 0s; }
+.part2 { animation-delay: 0.5s; }
+.part3 { animation-delay: 1s; }
+.part4 { animation-delay: 1.5s; }
 
-input.form-control {
-  background-color: #222;
-  border: 1px solid #555;
-  color: #fff;
-}
-
-input.form-control::placeholder {
-  color: #aaa;
-}
-
-button.btn-warning {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-button.btn-warning:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ffcc00;
-    transition: all 0.3s ease;
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: scale(1.2);
   }
-  
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  padding: 0.5rem 1rem;
+  background: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #f0ad4e;
+}
+
+.forgot-password {
+  text-align: right;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
