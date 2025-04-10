@@ -1,26 +1,36 @@
-import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import './LobbyPage.css'
 
-export default function LoginPage() {
-  const [username, setUsername] = useState('')
+export default function LobbyPage() {
   const navigate = useNavigate()
+  const username = localStorage.getItem('user')
 
-  const handleLogin = () => {
-    // de test, setăm în localStorage și mergem în lobby
-    localStorage.setItem('user', username)
-    navigate('/lobby')
+  useEffect(() => {
+    if (!username) navigate('/')
+  }, [navigate, username])
+
+  const handleStartGame = () => {
+    navigate('/game')
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>ConQUIZtador</h2>
-      <input
-        type="text"
-        placeholder="Alege username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleLogin}>Intră în joc</button>
+    <div className="lobby-page">
+      <div className="lobby-card animate__animated animate__fadeIn">
+        <h2 className="game-title">Sala de așteptare</h2>
+        <p className="subtitle">Bine ai venit, <strong>{username}</strong>!</p>
+        <div className="players-list">
+          <p><em>(Simulare)</em> Jucători conectați:</p>
+          <ul>
+            <li>SirQuizalot</li>
+            <li>LadyLexicon</li>
+            <li>{username}</li>
+          </ul>
+        </div>
+        <button className="btn btn-success w-100 mt-4" onClick={handleStartGame}>
+          Începe cucerirea!
+        </button>
+      </div>
     </div>
   )
 }

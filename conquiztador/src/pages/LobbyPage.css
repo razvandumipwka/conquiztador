@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
 
-.login-page {
+.lobby-page {
   background: linear-gradient(to bottom, #1e1e1e, #000);
   color: #f0e6d2;
   font-family: 'MedievalSharp', cursive;
@@ -11,18 +11,18 @@
   justify-content: center;
 }
 
-.login-card {
+.lobby-card {
   background: rgba(30, 30, 30, 0.9);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 20px #ffcc00;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   text-align: center;
 }
 
 .game-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
   color: #ffcc00;
 }
@@ -33,25 +33,14 @@
   color: #ddd;
 }
 
-input.form-control {
-  background-color: #222;
-  border: 1px solid #555;
-  color: #fff;
+.players-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
 }
 
-input.form-control::placeholder {
-  color: #aaa;
+.players-list li {
+  padding: 0.3rem;
+  border-bottom: 1px solid #555;
+  color: #f2f2f2;
 }
-
-button.btn-warning {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-button.btn-warning:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ffcc00;
-    transition: all 0.3s ease;
-  }
-  
