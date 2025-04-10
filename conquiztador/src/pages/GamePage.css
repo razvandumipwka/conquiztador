@@ -1,85 +1,79 @@
-@import 'https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
-
-* {
-  box-sizing: border-box;
-}
-
 .game-page {
-  font-family: 'MedievalSharp', cursive;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-  color: #f0e6d2;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.game-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
-}
-
-.game-title {
-  font-size: 2rem;
-  color: #ffcc00;
-}
-
-.player-name {
-  font-size: 1.1rem;
-  color: #ccc;
-}
-
-.game-main {
-  display: flex;
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-}
-
-.game-map {
-  flex: 2;
-  background-color: #222;
-  border-right: 1px solid #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.placeholder-box {
-  color: #777;
-  font-size: 1.5rem;
-}
-
-.game-ui {
-  flex: 1;
-  padding: 2rem;
-  background-color: #1e1e1e;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.question-card {
-  background-color: #2a2a2a;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 15px #ffcc00;
-}
-
-.question-text {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #ffeeba;
-}
-
-.answers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
+    font-family: 'MedievalSharp', cursive;
+    background: #121212;
+    color: #f0e6d2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+  }
+  
+  .game-title {
+    font-size: 2rem;
+    color: #ffcc00;
+  }
+  
+  .scoreboard {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .score-item {
+    font-size: 1rem;
+    color: #aaa;
+  }
+  
+  .score-item.active {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .game-main {
+    flex: 1;
+    display: flex;
+  }
+  
+  .game-map {
+    flex: 2;
+    border-right: 1px solid #333;
+  }
+  
+  .game-ui {
+    flex: 1;
+    padding: 2rem;
+    background: #1e1e1e;
+  }
+  
+  .question-card {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px #ffcc00;
+  }
+  
+  .question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffeeba;
+  }
+  
+  .answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .turn-info {
+    color: #aaa;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
